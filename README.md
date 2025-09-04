@@ -1,4 +1,6 @@
-# Functions: CARA + Lognormal (Truncated) Demand Lab (JAX)
+
+
+# Insurance Demand Model with `JAX`
 
 A tiny exaplme that simulates and plots demand for full insurance under **CARA utility** and **lognormal risk** with an **out-of-pocket cap** (to keep expected utility finite). Everything core runs in **JAX** (`jax.numpy`), while plotting uses `matplotlib`.
 
