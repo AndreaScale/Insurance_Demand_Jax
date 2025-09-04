@@ -10,7 +10,9 @@ We study demand for full insurance under **CARA utility** and **lognormal health
 
 - Each individual faces medical loss
 
-$$Exp \sim \text{LogNormal}(\mu(\text{sex}, \text{age}), \sigma^2).$$
+$$Exp \sim \text{LogNormal}(\mu(\text{sex}, \text{age}), \sigma^2),$$
+
+where $\mu(\text{sex}, \text{age}) = \mu_0 + \mu_a * age + \mu_s * sex$.
 
 - Utility is **CARA**:
 
