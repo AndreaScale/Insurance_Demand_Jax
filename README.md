@@ -1,6 +1,34 @@
-# Functions: CARA + Lognormal (Truncated) Demand Lab (JAX)
+
+
+# Insurance Demand Model with `JAX`
 
 A tiny exaplme that simulates and plots demand for full insurance under **CARA utility** and **lognormal risk** with an **out-of-pocket cap** (to keep expected utility finite). Everything core runs in **JAX** (`jax.numpy`), while plotting uses `matplotlib`.
+
+## Model description
+
+We study demand for full insurance under **CARA utility** and **lognormal health expenditure risk**:
+
+- Each individual faces medical loss
+
+$$Exp \sim \text{LogNormal}(\mu(\text{sex}, \text{age}), \sigma^2),$$
+
+where $\mu(\text{sex}, \text{age}) = \mu_0 + \mu_a * age + \mu_s * sex$.
+
+- Utility is **CARA**:
+
+$$u(c) = -\tfrac{1}{\alpha} \exp(-\alpha c)$$
+
+with risk aversion $\alpha>0$.
+
+- Full insurance costs premium \(p\) and covers all expenditure (truncated at an out-of-pocket maximum \(M\)).
+- Without insurance: $c = -\min(Exp,M)$; with insurance: $c = -p$.
+- Insurance is purchased iff the premium is below the **certainty equivalent** of risk, that is
+
+$$p \leq p^{\ast} = \frac{1}{\alpha} log(E(exp(\alpha min(L,M)))),$$
+
+This yields individual demand $D_i(p)=1[p \leq p^{\ast}_i]$, and aggregate demand is
+
+$$Q = \int D_i(p) di.$$
 
 ## Install deps
 
