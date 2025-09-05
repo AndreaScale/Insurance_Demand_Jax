@@ -1,4 +1,42 @@
 """
+functions
+=========
+
+Convenience re-exports for the insurance-demand toy model.
+
+Modules expected in this package:
+- simulation.py  -> draw_capped_lognormal
+- utility.py     -> expected_utility_uninsured, certainty_equivalent_uninsured,
+                    uninsured_EU_with_signature, uninsured_CE_with_signature
+- demand.py      -> insurance_demand_full_coverage
+- plots.py       -> plot_demand_vs_price
+"""
+
+__version__ = "0.1.0"
+__docformat__ = "google"
+
+from .Functions_Nicole import (
+    expected_utility_uninsured,
+    certainty_equivalent_uninsured,
+    uninsured_EU_with_signature,
+    uninsured_CE_with_signature,
+    draw_capped_lognormal,
+    insurance_demand_full_coverage,
+    plot_demand_vs_price
+)
+
+__all__ = [
+    "draw_capped_lognormal",
+    "expected_utility_uninsured",
+    "certainty_equivalent_uninsured",
+    "uninsured_EU_with_signature",
+    "uninsured_CE_with_signature",
+    "insurance_demand_full_coverage",
+    "plot_demand_vs_price",
+]
+
+'''
+"""
 Functions package: educational JAX lab for insurance demand under CARA utility.
 Exposes key entry points for convenience.
 """
@@ -35,3 +73,4 @@ __all__ = [
     # graphs
     "plot_demand_curve", "plot_demand_curves_by_alpha",
 ]
+'''
